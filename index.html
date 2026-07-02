@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>調査</title>
+<!-- 既存のInstagram刺激スタイル（.instagram-post 等） -->
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ===== アプリUI（画面・質問・ボタン） ===== */
+  body { background: #fafafa; }
+  #app { width: 100%; max-width: 680px; margin: 0 auto; padding: 8px 0 64px; }
+  .screen { background: #fff; border: 1px solid #ececec; border-radius: 12px; padding: 28px 24px; margin: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+  .screen.wide { background: transparent; border: none; box-shadow: none; padding: 8px; }
+  .screen h1 { font-size: 20px; margin-bottom: 14px; color: #222; }
+  .screen p { font-size: 15px; line-height: 1.75; color: #333; margin-bottom: 12px; }
+  .lead { text-align: center; color: #666; }
+  .notes { margin: 8px 0 16px; padding-left: 1.1em; }
+  .notes li { font-size: 14px; line-height: 1.7; color: #444; margin-bottom: 6px; }
+  .progress { text-align: center; font-size: 13px; color: #888; margin-bottom: 8px; }
+  .code { font-size: 16px; margin-top: 20px; }
+  .small { font-size: 12px; color: #888; }
+
+  .actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+  .btn { font-size: 15px; padding: 12px 22px; border: none; border-radius: 8px; background: #2D5016; color: #fff; cursor: pointer; }
+  .btn:disabled { background: #b9c4ad; cursor: not-allowed; }
+  .btn.secondary { background: #efefef; color: #555; }
+
+  /* 質問 */
+  .qform { margin-top: 8px; }
+  .q-section { border-top: 1px solid #f0f0f0; padding-top: 6px; margin-top: 6px; }
+  .q-section:first-child { border-top: none; }
+  .q-prompt { font-size: 15px; font-weight: 600; color: #2D5016; margin: 18px 0 6px; }
+  .q-item { padding: 14px 12px; border-radius: 8px; }
+  .q-item.missing { background: #fdecec; outline: 1px solid #e6a1a1; }
+  .q-text { font-size: 15px; line-height: 1.7; color: #222; margin-bottom: 10px; }
+
+  .q-scale { display: flex; align-items: center; gap: 10px; }
+  .q-scale .anchor { font-size: 12px; color: #777; flex: 0 0 auto; max-width: 84px; line-height: 1.3; }
+  .q-scale .anchor.left { text-align: right; }
+  .pts { display: flex; gap: 4px; flex: 1 1 auto; justify-content: space-between; }
+  .pt { display: flex; flex-direction: column; align-items: center; gap: 3px; cursor: pointer; }
+  .pt input { width: 20px; height: 20px; }
+  .pt .num { font-size: 12px; color: #999; }
+
+  .q-choices { display: flex; flex-direction: column; gap: 8px; }
+  .choice { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #222; cursor: pointer; padding: 6px 4px; }
+  .choice input { width: 18px; height: 18px; }
+
+  .q-number { font-size: 16px; padding: 8px 10px; width: 120px; border: 1px solid #ccc; border-radius: 6px; }
+  .q-textarea { width: 100%; font-size: 15px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; }
+  #stimStage { display: flex; justify-content: center; margin: 12px 0; }
+
+  @media (max-width: 480px) {
+    .q-scale { flex-wrap: wrap; }
+    .q-scale .anchor { max-width: none; flex: 1 1 40%; }
+    .q-scale .anchor.left { text-align: left; }
+    .pts { order: 3; flex-basis: 100%; margin-top: 6px; }
+  }
+</style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- 依存順にロード（app.js が最後・自動起動） -->
+  <script src="carousel_instrumented.js"></script>
+  <script src="stimuli.js"></script>
+  <script src="assignment.js"></script>
+  <script src="datasink.js"></script>
+  <script src="questions.js"></script>
+  <script src="render.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

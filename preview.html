@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>刺激プレビュー（3ブランド × 3条件 QA）</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* QAツール用の最小スタイル（本番刺激のstyles.cssには手を入れない） */
+  .qa-bar {
+    position: sticky; top: 0; z-index: 1001;
+    background: #fff; border-bottom: 1px solid #dbdbdb;
+    padding: 12px 16px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", Meiryo, sans-serif;
+  }
+  .qa-bar label { font-size: 13px; color: #333; margin-right: 6px; }
+  .qa-bar select, .qa-bar button { font-size: 14px; padding: 6px 10px; }
+  .qa-status { font-size: 13px; padding: 4px 10px; border-radius: 6px; background: #f0f0f0; color: #666; }
+  .qa-status.pass { background: #e7f5e9; color: #1a7f37; font-weight: 600; }
+  .qa-readout { font-family: monospace; font-size: 12px; white-space: pre-wrap; background: #fafafa; border: 1px solid #eee; padding: 10px; margin: 10px 16px; border-radius: 6px; }
+  #stage { display: flex; justify-content: center; padding: 16px 0; }
+</style>
+</head>
+<body>
+
+  <div class="qa-bar">
+    <div>
+      <label for="brand">ブランド</label>
+      <select id="brand">
+        <option value="MIRAINE">MIRAINE（アパレル）</option>
+        <option value="TSUMUGI">TSUMUGI（飲食）</option>
+        <option value="KIORI">KIORI（家具）</option>
+      </select>
+    </div>
+    <div>
+      <label for="cond">条件</label>
+      <select id="cond">
+        <option value="a">A 公益のみ</option>
+        <option value="b">B 曖昧公言</option>
+        <option value="c">C 明確公言</option>
+      </select>
+    </div>
+    <span id="gate" class="qa-status">ゲート：未充足（全5枚＋各2秒＋4枚目5秒）</span>
+    <button id="dump">計測データ表示</button>
+  </div>
+
+  <div id="stage"></div>
+  <pre id="readout" class="qa-readout" hidden></pre>
+
+  <script src="carousel_instrumented.js"></script>
+  <script src="stimuli.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var controller = null;
+      var stage = document.getElementById('stage');
+      var gateEl = document.getElementById('gate');
+      var readout = document.getElementById('readout');
+      var brandSel = document.getElementById('brand');
+      var condSel = document.getElementById('cond');
+
+      function render() {
+        if (controller) { controller.destroy(); controller = null; }
+        gateEl.textContent = 'ゲート：未充足（全5枚＋各2秒＋4枚目5秒）';
+        gateEl.classList.remove('pass');
+        readout.hidden = true;
+        controller = Stimuli.mountStimulus(stage, brandSel.value, condSel.value, {
+          onGate: function () {
+            gateEl.textContent = 'ゲート：充足（「質問へ」有効化タイミング）';
+            gateEl.classList.add('pass');
+          }
+        });
+      }
+
+      brandSel.addEventListener('change', render);
+      condSel.addEventListener('change', render);
+      document.getElementById('dump').addEventListener('click', function () {
+        if (!controller) return;
+        readout.hidden = false;
+        readout.textContent = JSON.stringify(controller.getTimingData(), null, 2);
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
