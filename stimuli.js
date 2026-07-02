@@ -42,7 +42,7 @@
       profileName: 'miraine_official',
       // スライド1,2,3,5（4はslide4[cond]で差し込み）
       slides: ['MIRAINE1.png', 'MIRAINE2.png', 'MIRAINE3.png', null, 'MIRAINE5.png'],
-      slide4: { a: 'MIRAINE4a.png', b: 'MIRAINE4b.png', c: 'MIRAINE4c.png' }, // ★c=旧MIRAINE4_0c(認知拡大)をリネーム
+      slide4: { a: 'MIRAINE4-a.png', b: 'MIRAINE4-b.png', c: 'MIRAINE4-c.png' }, // ★c=旧MIRAINE4_0c(認知拡大)をリネーム
       alt: ['MIRAINE Re:Wear プロジェクト', '年間 約48万トン', 'Re:Wear の流れ', '動機公示スライド', 'あなたの服が、未来の素材に'],
       likes: '15,376 likes',
       caption: {
@@ -60,7 +60,7 @@
     TSUMUGI: {
       profileName: 'tsumugi_official',
       slides: ['TSUMUGI1.png', 'TSUMUGI2.png', 'TSUMUGI3.png', null, 'TSUMUGI5.png'],
-      slide4: { a: 'TSUMUGI4a.png', b: 'TSUMUGI4b.png', c: 'TSUMUGI4c.png' },
+      slide4: { a: 'TSUMUGI4-a.png', b: 'TSUMUGI4-b.png', c: 'TSUMUGI4-c.png' },
       alt: ['TSUMUGI Re:Table プロジェクト', '年間 約522万トン', 'Re:Table の流れ', '動機公示スライド', '食卓と地域の未来へ'],
       likes: '15,376 likes',
       caption: {
@@ -78,7 +78,7 @@
     KIORI: {
       profileName: 'kiori_official',
       slides: ['KIORI1.png', 'KIORI2.png', 'KIORI3.jpg', null, 'KIORI5.png'], // ★スライド3は.jpg
-      slide4: { a: 'KIORI4a.png', b: 'KIORI4b.png', c: 'KIORI4c.png' },
+      slide4: { a: 'KIORI4-a.png', b: 'KIORI4-b.png', c: 'KIORI4-c.png' },
       alt: ['KIORI Re:Furniture プロジェクト', '年間 約60万トン', 'Re:Furniture の流れ', '動機公示スライド', '森と次世代へ'],
       likes: '15,376 likes',
       caption: {
