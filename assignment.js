@@ -9,7 +9,7 @@
   'use strict';
 
   // ★実装時に DataPipe ダッシュボードの実験IDへ置換
-  const EXPERIMENT_ID = 'YOUR_DATAPIPE_EXPERIMENT_ID';
+  const EXPERIMENT_ID = 'oOubRKqJH0OF';
   const CONDITION_URL = 'https://pipe.jspsych.org/api/condition/';
 
   const DISCLOSURE = ['A', 'B', 'C'];          // A=公益のみ / B=曖昧公言 / C=明確公言
