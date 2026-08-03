@@ -107,7 +107,7 @@
     show(
       '<div class="screen wide">' +
       '<div class="progress">投稿 ' + (blockPtr + 1) + ' / 3</div>' +
-      '<p class="lead">最後の画像までご覧ください。</p>' +
+      '<p class="lead">すべての画像とキャプション文をご覧ください。</p>' +
       '<div id="stimStage"></div>' +
       '<div class="actions"><button class="btn" id="toQuestions" disabled>質問へ進む</button></div></div>'
     );
