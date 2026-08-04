@@ -93,7 +93,7 @@
       '<p>これから <strong>3件</strong> のInstagram投稿を順番にご覧いただきます。</p>' +
       '<ul class="notes">' +
       '<li>各投稿は左右スワイプ（またはボタン）で<strong>最後の画像まで</strong>ご覧ください。</li>' +
-      '<li><strong>すべての画像とキャプション文</strong>を十分に見終わると「質問へ進む」が押せるようになります。</li>' +
+      '<li><strong>すべての画像とキャプション文を十分に見終わると</strong>「質問へ進む」が押せるようになります。</li>' +
       '<li>その後、その投稿についていくつかの質問にお答えいただきます。</li>' +
       '</ul>' +
       '<div class="actions"><button class="btn" id="beginBtn">はじめる</button></div></div>'
