@@ -85,10 +85,13 @@
     },
 
     // スクリーニング（Phase 0）
-    screening: {
-      age: { id: 'age', type: 'number', text: '年齢を半角数字で入力してください。', min: 0, max: 120 },
-      sns: { id: 'sns_freq', type: 'freq5', text: 'ふだん、SNS全般をどのくらいの頻度で利用しますか。' },
-    },
+ // screening 内：sns を insta に変更
+screening: {
+  age: { id: 'age', type: 'number', text: '年齢を半角数字で入力してください。', min: 0, max: 120 },
+  insta: { id: 'insta_freq', type: 'freq5', text: 'ふだん、Instagramをどのくらいの頻度で利用しますか。' },
+},
+
+// demographics 配列から insta_freq の行を削除（gender と occupation のみ残す）
 
     // デモグラフィック（Phase 3。sns_freq はスクリーニングで取得済）
     demographics: [
