@@ -106,7 +106,7 @@ function screenConsent() {
       var age = parseInt(v.age, 10);
       var insta = parseInt(v.insta_freq, 10);
       // 適格性：18–29歳 かつ SNS頻度 >= 下限
-      if (isNaN(age) || age < 18 || age > 29 || sns < B.insta_MIN_FREQ) {
+      if (isNaN(age) || age < 18 || age > 29 || insta < B.insta_MIN_FREQ) {
         show('<div class="screen"><h1>ありがとうございました</h1><p>今回の調査の対象条件に合致しないため、ここで終了となります。ご協力に感謝いたします。</p></div>');
         return;
       }
