@@ -95,7 +95,6 @@
     r.gender = def(s.gender);
     r.occupation = def(s.occupation);
     r.insta_freq = def(s.insta_freq);
-    r.sns_freq = def(s.sns_freq);
     r.feedback_text = def(s.feedback_text);
 
     // --- 品質フラグ（クライアント算出。詳細判定は解析側でも実施可） ---
