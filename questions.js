@@ -97,7 +97,6 @@ screening: {
     demographics: [
       { id: 'gender', type: 'mc', text: '性別を教えてください。', options: ['男性', '女性', 'その他', '回答しない'] },
       { id: 'occupation', type: 'mc', text: '現在の主な立場を教えてください。', options: ['学生', '被雇用', 'その他'] },
-      { id: 'insta_freq', type: 'freq5', text: 'ふだん、Instagramをどのくらいの頻度で利用しますか。' },
     ],
   };
 
