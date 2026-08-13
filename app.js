@@ -152,9 +152,9 @@ function screenInstructions() {
       '<div class="progress">投稿 ' + (blockPtr + 1) + ' / 3</div>' +
       '<div class="stim-instruction">' +
       '<p><strong>' + ord + 'の投稿です。</strong></p>' +
-      '<p>1枚目から順に、<strong>1枚1枚の画像に書かれている文章とキャプション（本文）を最後まで読んでください。</strong>' +
-      '読み終えたら次の画像へ進み、最後の1枚まで同じように読み進めてください。</p>' +
-      '<p class="sub">この後、この投稿について印象をお伺いします。急がず、内容を確かめながらお読みください。</p>' +
+      '<p><strong>1枚1枚の画像に書かれている文章およびキャプション（本文）を最後まで読んでください。</strong>' +
+      '十分に画像内の文章とキャプション（本文）を読まないと、<strong>次に進めない仕様になっています。</strong></p>' +
+      '<p class="sub">この後、この投稿について印象をお伺いします。急がず内容を確かめながら、よくお読みください。</p>' +
       '</div>' +
       '<div id="stimStage"></div>' +
       '<div class="actions"><button class="btn" id="toQuestions" disabled>質問へ進む</button></div></div>'
