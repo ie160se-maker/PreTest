@@ -10,11 +10,11 @@
   const CAUSE = { MIRAINE: '衣料品の廃棄問題', TSUMUGI: '食品ロス問題', KIORI: '家具の廃棄問題' };
   const BRAND = { MIRAINE: 'MIRAINE', TSUMUGI: 'TSUMUGI', KIORI: 'KIORI' };
   const LIK = { min: '全くそう思わない', max: '非常にそう思う' };
-  const SNS_MIN_FREQ = 3; // 適格性下限（SNS利用頻度1-5。既定=3=月2〜3回以上。調整可）
+  const insta_MIN_FREQ = 3; // 適格性下限（SNS利用頻度1-5。既定=3=月2〜3回以上。調整可）
   const FREQ5 = ['全く使わない', '月1回以下', '月2〜3回', '週数回', '毎日'];
 
   const Battery = {
-    CAUSE: CAUSE, BRAND: BRAND, LIK: LIK, FREQ5: FREQ5, SNS_MIN_FREQ: SNS_MIN_FREQ,
+    CAUSE: CAUSE, BRAND: BRAND, LIK: LIK, FREQ5: FREQ5, insta_MIN_FREQ: insta_MIN_FREQ,
 
     // 動機帰属（Rifon et al. 2004）7件法・提示ランダム・M2逆転
     motive: {
