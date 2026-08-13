@@ -104,7 +104,7 @@ function screenConsent() {
       if (miss) { R.markMissing(root, miss); return; }
       var v = R.collect(root);
       var age = parseInt(v.age, 10);
-      var sns = parseInt(v.insta_freq, 10);
+      var insta = parseInt(v.insta_freq, 10);
       // 適格性：18–29歳 かつ SNS頻度 >= 下限
       if (isNaN(age) || age < 18 || age > 29 || sns < B.insta_MIN_FREQ) {
         show('<div class="screen"><h1>ありがとうございました</h1><p>今回の調査の対象条件に合致しないため、ここで終了となります。ご協力に感謝いたします。</p></div>');
@@ -242,11 +242,11 @@ function screenInstructions() {
     show(html);
     document.getElementById('demoNext').onclick = function () {
       var root = document.getElementById('demoForm');
-      var miss = R.firstMissing(root, ['gender', 'occupation', 'insta_freq']);
+      var miss = R.firstMissing(root, ['gender', 'occupation']);
       if (miss) { R.markMissing(root, miss); return; }
       var v = R.collect(root);
       STATE.gender = v.gender; STATE.occupation = v.occupation;
-      STATE.insta_freq = num(v.insta_freq); STATE.feedback_text = v.feedback_text || '';
+      STATE.feedback_text = v.feedback_text || '';
       finish();
     };
   }
