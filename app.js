@@ -64,24 +64,24 @@
     var html = '<div class="screen"><h1>はじめに</h1>' +
       '<div class="qform" id="scrForm">' +
       R.item(B.screening.age, {}, 'number') +
-      R.item(B.screening.sns, {}, 'freq5') +
+      R.item(B.screening.insta, {}, 'freq5') +
       '</div>' +
       '<div class="actions"><button class="btn" id="scrNext">次へ</button></div></div>';
     show(html);
     document.getElementById('scrNext').onclick = function () {
       var root = document.getElementById('scrForm');
-      var miss = R.firstMissing(root, ['age', 'sns_freq']);
+      var miss = R.firstMissing(root, ['age', 'insta_freq']);
       if (miss) { R.markMissing(root, miss); return; }
       var v = R.collect(root);
       var age = parseInt(v.age, 10);
-      var sns = parseInt(v.sns_freq, 10);
+      var sns = parseInt(v.insta_freq, 10);
       // 適格性：18–29歳 かつ SNS頻度 >= 下限
-      if (isNaN(age) || age < 18 || age > 29 || sns < B.SNS_MIN_FREQ) {
+      if (isNaN(age) || age < 18 || age > 29 || sns < B.insta_MIN_FREQ) {
         show('<div class="screen"><h1>ありがとうございました</h1><p>今回の調査の対象条件に合致しないため、ここで終了となります。ご協力に感謝いたします。</p></div>');
         return;
       }
       STATE.age = age;
-      STATE.sns_freq = sns;
+      STATE.insta_freq = insta;
       screenInstructions();
     };
   }
